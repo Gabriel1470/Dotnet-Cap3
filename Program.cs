@@ -1,10 +1,15 @@
-﻿using Dotnet_Cap3;
+﻿var randList = new Random();
+var doubleList = new List<double>();
 
-var randList = new Random();
-var intList = new List<int>();
-for (int i = 0; i < 1000; i++)
+for  (int i = 0; i < 10; i++)
 {
-    intList.Add(randList.Next(0, 1001));
+    doubleList.Add(randList.NextDouble()*10);
 }
-var results = intList.OrderBy(i => i, new Calcola()).ToList();
-results.ForEach(i => Console.Write(i + " - "));
+
+var somma = doubleList.Sum();
+var media = doubleList.Average();
+var conta = doubleList.Count();
+
+Console.WriteLine("somma di tutti gli elementi della lista: " + somma);
+Console.WriteLine("media della lista: " + media);
+Console.WriteLine("la lista ha " + conta + " elementi");
