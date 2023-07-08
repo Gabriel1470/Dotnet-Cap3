@@ -1,8 +1,15 @@
-﻿var oneList = new List<string>() {"lista1-1"};
-var twoList = new List<string>() {"lista2-2", "lista3-3"};
+﻿var randList = new Random();
+var intList = new List<int>();
 
-Console.WriteLine(oneList.FirstOrDefault());
-Console.WriteLine(twoList.FirstOrDefault());
 
-Console.WriteLine(oneList.SingleOrDefault());
-Console.WriteLine(twoList.SingleOrDefault());
+
+for (int i = 0; i < 10; i++)
+{
+    intList.Add(randList.Next(0,10));
+}
+
+var pari = intList.All(x => x % 2 == 0);
+var dispari = intList.Any(x => x % 2 == 1);
+
+Console.WriteLine($"Sono tutti  pari? {pari}");
+Console.WriteLine($"Ci sono numeri dispari? {dispari}");
